@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { map, capitalize, upperCase } from 'lodash';
+import {StyleSheet, View, Text} from 'react-native';
+import {map, capitalize, upperCase} from 'lodash';
 import getColorByType from '../../utils/getColorByType';
 
-export default function Type({ types }) {
+export default function Type({types}) {
 	return (
 		<View style={styles.content}>
 			{map(types, (item, index) => (
@@ -12,13 +12,15 @@ export default function Type({ types }) {
 					style={{
 						...styles.bg,
 						backgroundColor: getColorByType(item.type.name),
-					}}>
+					}}
+				>
 					<Text
 						style={{
 							fontSize: 17,
 							color: '#fff',
 							fontWeight: 'bold',
-						}}>
+						}}
+					>
 						{capitalize(item.type.name)}
 					</Text>
 				</View>

@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { map, capitalize } from 'lodash';
+import {StyleSheet, View, Text} from 'react-native';
+import {map, capitalize} from 'lodash';
 
-export default function Stats({ stats }) {
+export default function Stats({stats}) {
 	const barStyles = (num) => {
 		const color = num > 49 ? '#11aa11' : '#ff3e3e';
 		return {
@@ -15,7 +15,10 @@ export default function Stats({ stats }) {
 		<View style={styles.content}>
 			<Text style={styles.title}> Base stats </Text>
 			{map(stats, (item, index) => (
-				<View key={index} style={styles.block}>
+				<View
+					key={index}
+					style={styles.block}
+				>
 					<View style={styles.blockTitle}>
 						<Text style={styles.statName}>
 							{capitalize(item.stat.name)}
@@ -25,10 +28,8 @@ export default function Stats({ stats }) {
 						<Text style={styles.number}>{item.base_stat}</Text>
 						<View style={styles.bgBar}>
 							<View
-								style={[
-									styles.bar,
-									barStyles(item.base_stat),
-								]}></View>
+								style={[styles.bar, barStyles(item.base_stat)]}
+							></View>
 						</View>
 					</View>
 				</View>

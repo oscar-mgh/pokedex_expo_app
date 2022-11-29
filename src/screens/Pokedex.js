@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { SafeAreaView } from 'react-native';
-import { getPokemonDetailsByUrlApi, getPokemonsApi } from '../api/pokemon';
+import React, {useState, useEffect} from 'react';
+import {SafeAreaView} from 'react-native';
+import {getPokemonDetailsByUrlApi, getPokemonsApi} from '../api/pokemon';
 import PokemonList from '../components/PokemonList';
 
 export default function Pokedex() {
@@ -19,7 +19,7 @@ export default function Pokedex() {
 			setNextUrl(response.next);
 			const pokemonsArray = [];
 			for await (const pokemon of response.results) {
-				const { id, name, types, order, sprites } =
+				const {id, name, types, order, sprites} =
 					await getPokemonDetailsByUrlApi(pokemon.url);
 				pokemonsArray.push({
 					id: id,

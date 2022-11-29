@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import { View, Button, Text, StyleSheet } from 'react-native';
+import {View, Button, Text, StyleSheet} from 'react-native';
 
 export default function NoLogged() {
 	const navigation = useNavigation();
@@ -10,8 +10,8 @@ export default function NoLogged() {
 				Para ver tus favoritos accede a tu cuenta
 			</Text>
 			<Button
-				color="#0965BF"
-				title="Iniciar Sesion"
+				color='#0965BF'
+				title='Iniciar Sesion'
 				onPress={() => navigation.navigate('Account')}
 			/>
 		</View>

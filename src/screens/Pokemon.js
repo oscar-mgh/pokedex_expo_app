@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { ScrollView } from 'react-native';
-import { getPokemonDetailsByIdApi } from '../api/pokemon';
+import React, {useState, useEffect} from 'react';
+import {ScrollView} from 'react-native';
+import {getPokemonDetailsByIdApi} from '../api/pokemon';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Header from '../components/Pokemon/Header';
 import Type from '../components/Pokemon/Type';
@@ -8,20 +8,21 @@ import Stats from '../components/Stats';
 import AddFavourite from '../components/Pokemon/AddFavourite';
 import UseAuth from '../hooks/UseAuth';
 
-export default function Pokemon({ route, navigation }) {
-	const { params } = route;
+export default function Pokemon({route, navigation}) {
+	const {params} = route;
 	const [pokemon, setPokemon] = useState(null);
-	const { auth } = UseAuth();
+	const {auth} = UseAuth();
 
 	useEffect(() => {
 		navigation.setOptions({
-			headerRight: () => (auth ? <AddFavourite id={pokemon?.id} /> : null),
+			headerRight: () =>
+				auth ? <AddFavourite id={pokemon?.id} /> : null,
 			headerLeft: () => (
 				<Icon
-					name="arrow-left"
-					color="#fff"
+					name='arrow-left'
+					color='#fff'
 					size={30}
-					style={{ marginLeft: 15, marginBottom: 10 }}
+					style={{marginLeft: 15, marginBottom: 10}}
 					onPress={navigation.goBack}
 				/>
 			),

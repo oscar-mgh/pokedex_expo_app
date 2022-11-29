@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { includes, pull } from 'lodash';
-import { FAVOURITE_STORAGE } from '../utils/constants';
+import {includes, pull} from 'lodash';
+import {FAVOURITE_STORAGE} from '../utils/constants';
 
 export async function getFavouritePokemons() {
 	try {
@@ -15,7 +15,10 @@ export async function AddFavouritePokemon(id) {
 	try {
 		const favourites = await getFavouritePokemons();
 		favourites.push(id);
-		await AsyncStorage.setItem(FAVOURITE_STORAGE, JSON.stringify(favourites));
+		await AsyncStorage.setItem(
+			FAVOURITE_STORAGE,
+			JSON.stringify(favourites)
+		);
 	} catch (error) {
 		console.error(error);
 	}

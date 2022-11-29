@@ -1,12 +1,12 @@
-import { View, Text, StyleSheet, Button } from 'react-native';
-import React, { useCallback, useState } from 'react';
+import {View, Text, StyleSheet, Button} from 'react-native';
+import React, {useCallback, useState} from 'react';
 import UseAuth from '../../hooks/UseAuth';
-import { useFocusEffect } from '@react-navigation/native';
-import { size } from 'lodash';
-import { getFavouritePokemons } from '../../api/favouriteApi';
+import {useFocusEffect} from '@react-navigation/native';
+import {size} from 'lodash';
+import {getFavouritePokemons} from '../../api/favouriteApi';
 
 export default function UserData() {
-	const { auth, logout } = UseAuth();
+	const {auth, logout} = UseAuth();
 	const [total, setTotal] = useState(0);
 
 	useFocusEffect(
@@ -27,27 +27,39 @@ export default function UserData() {
 			<View style={styles.titleBlock}>
 				<Text style={styles.title}>Bienvenido</Text>
 				<Text
-					style={
-						styles.title
-					}>{`${auth.firstName} ${auth.lastName}`}</Text>
+					style={styles.title}
+				>{`${auth.firstName} ${auth.lastName}`}</Text>
 			</View>
 			<View style={styles.dataContent}>
 				<ItemMenu
-					title="Nombre"
+					title='Nombre'
 					text={`${auth.firstName} ${auth.lastName}`}
 				/>
-				<ItemMenu title="Usuario" text={`${auth.username}`} />
-				<ItemMenu title="Email" text={`${auth.email}`} />
-				<ItemMenu title="Total Favoritos" text={`${total} pokemons `} />
+				<ItemMenu
+					title='Usuario'
+					text={`${auth.username}`}
+				/>
+				<ItemMenu
+					title='Email'
+					text={`${auth.email}`}
+				/>
+				<ItemMenu
+					title='Total Favoritos'
+					text={`${total} pokemons `}
+				/>
 				<View style={styles.btnLogout}>
-					<Button color="#345" title="Logout" onPress={logout} />
+					<Button
+						color='#345'
+						title='Logout'
+						onPress={logout}
+					/>
 				</View>
 			</View>
 		</View>
 	);
 }
 
-function ItemMenu({ title, text }) {
+function ItemMenu({title, text}) {
 	return (
 		<View style={styles.itemMenu}>
 			<Text style={styles.itemMenuTitle}>{title}:</Text>

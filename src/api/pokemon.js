@@ -1,4 +1,4 @@
-import { API_HOST } from '../utils/constants';
+import {API_HOST} from '../utils/constants';
 
 export async function getPokemonsApi(endpointUrl) {
 	try {
